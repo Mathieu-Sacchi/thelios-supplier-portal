@@ -21,7 +21,7 @@ export const PortalHeader = () => {
           </button>
           <button className="hover:underline flex items-center gap-1">
             <User className="h-3 w-3" />
-            UPPLNAME
+            SUPPLIER01
           </button>
           <button className="hover:underline flex items-center gap-1">
             <HelpCircle className="h-3 w-3" />

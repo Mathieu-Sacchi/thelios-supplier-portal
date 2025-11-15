@@ -11,13 +11,13 @@ const Orders = () => {
         
         <main className="flex-1 p-4">
           <div className="mb-4 pb-2 border-b-2 border-border flex items-center justify-between">
-            <h2 className="text-sm font-bold">ORDEER KOAS DABBASH</h2>
+            <h2 className="text-sm font-bold">ORDERS DASHBOARD</h2>
             <div className="flex gap-2 text-xs">
               <button className="px-2 py-1 border-2 border-border bg-secondary hover:bg-muted rounded-none">
-                E9
+                EXPORT
               </button>
               <button className="px-2 py-1 border-2 border-border bg-secondary hover:bg-muted rounded-none">
-                MASTER NAIME
+                MASTER VIEW
               </button>
             </div>
           </div>
@@ -79,37 +79,34 @@ const Orders = () => {
             <table className="w-full text-xs border-collapse">
               <thead>
                 <tr className="bg-table-header">
-                  <th className="border border-table-border px-2 py-1 text-left font-semibold">g:ID</th>
-                  <th className="border border-table-border px-2 py-1 text-left font-semibold">RZ</th>
-                  <th className="border border-table-border px-2 py-1 text-left font-semibold">SNF</th>
+                  <th className="border border-table-border px-2 py-1 text-left font-semibold">Order ID</th>
+                  <th className="border border-table-border px-2 py-1 text-left font-semibold">Status</th>
+                  <th className="border border-table-border px-2 py-1 text-left font-semibold">Supplier</th>
                   <th className="border border-table-border px-2 py-1 text-left font-semibold">Material code</th>
-                  <th className="border border-table-border px-2 py-1 text-left font-semibold">Overear</th>
+                  <th className="border border-table-border px-2 py-1 text-left font-semibold">Owner</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-muted">
-                  <td className="border border-table-border px-2 py-1">.</td>
-                  <td className="border border-table-border px-2 py-1">X</td>
-                  <td className="border border-table-border px-2 py-1">1</td>
-                  <td className="border border-table-border px-2 py-1">SGCC</td>
-                  <td className="border border-table-border px-2 py-1">rnmren</td>
-                  <td className="border border-table-border px-2 py-1">F</td>
+                  <td className="border border-table-border px-2 py-1">PO-2024-001</td>
+                  <td className="border border-table-border px-2 py-1">Published</td>
+                  <td className="border border-table-border px-2 py-1">ACME Corp</td>
+                  <td className="border border-table-border px-2 py-1">MAT-001</td>
+                  <td className="border border-table-border px-2 py-1">J. Smith</td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="border border-table-border px-2 py-1">.</td>
-                  <td className="border border-table-border px-2 py-1">y</td>
-                  <td className="border border-table-border px-2 py-1">t</td>
-                  <td className="border border-table-border px-2 py-1">SGSC</td>
-                  <td className="border border-table-border px-2 py-1">rnmren</td>
-                  <td className="border border-table-border px-2 py-1">F</td>
+                  <td className="border border-table-border px-2 py-1">PO-2024-002</td>
+                  <td className="border border-table-border px-2 py-1">Read</td>
+                  <td className="border border-table-border px-2 py-1">Global Industries</td>
+                  <td className="border border-table-border px-2 py-1">MAT-002</td>
+                  <td className="border border-table-border px-2 py-1">M. Johnson</td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="border border-table-border px-2 py-1">.</td>
-                  <td className="border border-table-border px-2 py-1">X</td>
-                  <td className="border border-table-border px-2 py-1">t</td>
-                  <td className="border border-table-border px-2 py-1">SGCS</td>
-                  <td className="border border-table-border px-2 py-1">irtmrm</td>
-                  <td className="border border-table-border px-2 py-1">F</td>
+                  <td className="border border-table-border px-2 py-1">PO-2024-003</td>
+                  <td className="border border-table-border px-2 py-1">Confirmed</td>
+                  <td className="border border-table-border px-2 py-1">Tech Solutions</td>
+                  <td className="border border-table-border px-2 py-1">MAT-003</td>
+                  <td className="border border-table-border px-2 py-1">A. Brown</td>
                 </tr>
               </tbody>
             </table>

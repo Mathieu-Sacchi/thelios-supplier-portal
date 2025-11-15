@@ -65,16 +65,16 @@ const OrderRows = () => {
             </div>
             <div className="flex gap-2">
               <button className="px-3 py-1 text-xs border-2 border-border bg-primary text-primary-foreground rounded-none hover:bg-primary/90">
-                CONRIC
+                SEARCH
               </button>
               <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted">
-                SIZE
+                RESET
               </button>
               <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted">
-                CONIFIRM
+                ADVANCED
               </button>
               <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted">
-                MASSIVE LISE
+                MASSIVE UPLOAD
               </button>
             </div>
           </div>
@@ -84,7 +84,7 @@ const OrderRows = () => {
               onClick={() => updateStatus('Read')}
               className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted font-semibold"
             >
-              HEIM
+              READ
             </button>
             <button 
               onClick={() => updateStatus('Working')}
@@ -105,7 +105,7 @@ const OrderRows = () => {
               MASSIVE UPDATE
             </button>
             <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted font-semibold">
-              CONFIRM PROPSEAL
+              CLOSING PROPOSAL
             </button>
           </div>
 
@@ -113,12 +113,12 @@ const OrderRows = () => {
             <table className="w-full text-xs border-collapse">
               <thead>
                 <tr className="bg-table-header">
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Order iltes</th>
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Order ñbles</th>
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold">States</th>
+                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Order Number</th>
+                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Row Number</th>
+                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Status</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Material code</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Price</th>
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Luntitany</th>
+                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Quantity</th>
                 </tr>
               </thead>
               <tbody className="bg-card">
@@ -142,69 +142,69 @@ const OrderRows = () => {
 
           <div className="mt-3 flex gap-2">
             <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted font-semibold">
-              EHRAPT
+              ORDER ROW SUMMARY
             </button>
             <button className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted font-semibold">
-              USE
+              COPY
             </button>
             <button 
               onClick={handleExport}
               className="px-3 py-1 text-xs border-2 border-border bg-secondary rounded-none hover:bg-muted font-semibold"
             >
-              CIUSGC
+              EXPORT LIST
             </button>
           </div>
 
           <div className="mt-4 p-3 bg-card border-2 border-border">
-            <div className="text-xs font-bold mb-2">Orderliour Summany</div>
+            <div className="text-xs font-bold mb-2">Order Row Summary</div>
             <div className="grid grid-cols-3 gap-2 text-xs">
               <div className="border border-table-border p-2">
-                <div className="font-semibold">Pon Hilfocjeus</div>
+                <div className="font-semibold">Total Rows</div>
                 <div className="flex justify-between mt-1">
-                  <span>Print ve</span>
-                  <span className="font-semibold">2</span>
-                  <span className="font-semibold">9</span>
+                  <span>Published</span>
+                  <span className="font-semibold">12</span>
+                  <span className="font-semibold">24%</span>
                 </div>
               </div>
               <div className="border border-table-border p-2">
-                <div className="font-semibold">Enarownll</div>
+                <div className="font-semibold">In Progress</div>
                 <div className="flex justify-between mt-1">
-                  <span>é</span>
-                  <span className="font-semibold">é</span>
-                  <span className="font-semibold">7</span>
+                  <span>Working</span>
+                  <span className="font-semibold">8</span>
+                  <span className="font-semibold">16%</span>
                 </div>
               </div>
               <div className="border border-table-border p-2">
-                <div className="font-semibold">Exarnonll</div>
+                <div className="font-semibold">Completed</div>
                 <div className="flex justify-between mt-1">
-                  <span>2</span>
-                  <span className="font-semibold">2</span>
-                  <span className="font-semibold">1</span>
+                  <span>Confirmed</span>
+                  <span className="font-semibold">30</span>
+                  <span className="font-semibold">60%</span>
                 </div>
               </div>
             </div>
             <div className="mt-2 flex gap-2">
               <div className="flex-1 border border-table-border p-2">
-                <div className="font-semibold">Sllicon Llslt</div>
+                <div className="font-semibold">Selection Summary</div>
                 <div className="flex justify-between mt-1">
-                  <span>Pon</span>
-                  <span>Codd</span>
+                  <span>Selected</span>
+                  <span>0 rows</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="mt-3 p-3 bg-card border-2 border-border text-xs">
-            <div className="font-bold mb-1">Recomited</div>
+            <div className="font-bold mb-1">Statistics</div>
             <div className="grid grid-cols-4 gap-2">
-              <div>Anwaucal <span className="font-semibold">é</span></div>
-              <div>Consumed <span className="font-semibold">9</span></div>
-              <div>Unboand <span className="font-semibold">3</span></div>
-              <div>Onede <span className="font-semibold">1</span></div>
-              <div>Enetietoll <span className="font-semibold">é</span></div>
+              <div>Published <span className="font-semibold">12</span></div>
+              <div>Read <span className="font-semibold">8</span></div>
+              <div>Working <span className="font-semibold">15</span></div>
+              <div>Negotiation <span className="font-semibold">7</span></div>
+              <div>Confirmed <span className="font-semibold">30</span></div>
+              <div>Cancelled <span className="font-semibold">3</span></div>
               <div>&nbsp;</div>
-              <div>&nbsp;</div>
-              <div>d <span className="font-semibold">I</span></div>
+              <div>Total <span className="font-semibold">75</span></div>
             </div>
           </div>
         </main>
