@@ -45,6 +45,30 @@ export const PortalSidebar = () => {
         </div>
 
         <div className="mb-1 px-2 py-1 bg-muted/50 border border-border font-semibold">
+          Invoices
+        </div>
+        <div className="pl-3 mb-2">
+          <Link
+            to="/invoices"
+            className={`flex items-center justify-between px-2 py-1.5 border border-border ${
+              isActive("/invoices") ? "bg-muted font-semibold" : "hover:bg-muted/50"
+            }`}
+          >
+            Invoices List
+            <ChevronRight className="h-3 w-3" />
+          </Link>
+          <Link
+            to="/invoices/create"
+            className={`flex items-center justify-between px-2 py-1.5 mt-1 border border-border ${
+              isActive("/invoices/create") ? "bg-muted font-semibold" : "hover:bg-muted/50"
+            }`}
+          >
+            Create Invoice from PO
+            <ChevronRight className="h-3 w-3" />
+          </Link>
+        </div>
+
+        <div className="mb-1 px-2 py-1 bg-muted/50 border border-border font-semibold">
           Master Data
         </div>
         <div className="pl-3">
