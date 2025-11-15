@@ -18,25 +18,34 @@ export const InvoiceAttachments = ({
   onSubmit,
   onSaveDraft,
 }: InvoiceAttachmentsProps) => {
-  const [fileName, setFileName] = useState('');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [documentType, setDocumentType] = useState<'Invoice PDF' | 'Packing list' | 'Other'>('Invoice PDF');
   const [confirmed, setConfirmed] = useState(false);
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
   const handleUpload = () => {
-    if (!fileName) {
+    if (!selectedFile) {
       toast.error("Please select a file");
       return;
     }
 
     const newAttachment: InvoiceAttachment = {
       id: `att-${Date.now()}`,
-      fileName: fileName,
+      fileName: selectedFile.name,
       documentType: documentType,
       uploadedAt: new Date().toISOString(),
     };
 
     setAttachments([...attachments, newAttachment]);
-    setFileName('');
+    setSelectedFile(null);
+    // Reset the file input
+    const fileInput = document.getElementById('file-upload') as HTMLInputElement;
+    if (fileInput) fileInput.value = '';
     toast.success("File uploaded");
   };
 
@@ -67,14 +76,19 @@ export const InvoiceAttachments = ({
 
         <div className="grid grid-cols-3 gap-3 mb-3">
           <div>
-            <label className="text-xs block mb-1">File Name:</label>
+            <label className="text-xs block mb-1">Select File:</label>
             <input
-              type="text"
-              value={fileName}
-              onChange={(e) => setFileName(e.target.value)}
-              placeholder="e.g., invoice_12345.pdf"
-              className="h-7 text-xs w-full border border-input bg-background px-2"
+              id="file-upload"
+              type="file"
+              onChange={handleFileChange}
+              className="h-7 text-xs w-full border border-input bg-background px-2 file:mr-2 file:h-5 file:border-0 file:bg-muted file:px-2 file:text-xs"
+              accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
             />
+            {selectedFile && (
+              <div className="text-xs text-muted-foreground mt-1">
+                {selectedFile.name}
+              </div>
+            )}
           </div>
           <div>
             <label className="text-xs block mb-1">Document Type:</label>
