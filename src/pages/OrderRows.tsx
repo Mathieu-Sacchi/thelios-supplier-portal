@@ -2,17 +2,11 @@ import { useState } from "react";
 import { PortalHeader } from "@/components/layout/PortalHeader";
 import { PortalSidebar } from "@/components/layout/PortalSidebar";
 import { mockOrderRows, OrderRow, OrderStatus } from "@/data/mockOrders";
-import { Attachment } from "@/types/attachments";
-import { AttachmentModal } from "@/components/AttachmentModal";
-import { Paperclip } from "lucide-react";
 import { toast } from "sonner";
 
 const OrderRows = () => {
   const [orderRows, setOrderRows] = useState<OrderRow[]>(mockOrderRows);
   const [selectedRows, setSelectedRows] = useState<Set<string>>(new Set());
-  const [attachmentsByRowId, setAttachmentsByRowId] = useState<Record<string, Attachment[]>>({});
-  const [attachmentModalOpen, setAttachmentModalOpen] = useState(false);
-  const [currentRowId, setCurrentRowId] = useState<string | null>(null);
 
   const toggleRow = (id: string) => {
     const newSelected = new Set(selectedRows);
@@ -39,23 +33,6 @@ const OrderRows = () => {
 
   const handleExport = () => {
     toast("Excel export simulated");
-  };
-
-  const openAttachmentModal = (rowId: string) => {
-    setCurrentRowId(rowId);
-    setAttachmentModalOpen(true);
-  };
-
-  const handleAttachmentsChange = (attachments: Attachment[]) => {
-    if (!currentRowId) return;
-    setAttachmentsByRowId(prev => ({
-      ...prev,
-      [currentRowId]: attachments
-    }));
-  };
-
-  const getAttachmentCount = (rowId: string) => {
-    return attachmentsByRowId[rowId]?.length || 0;
   };
 
   return (
@@ -136,12 +113,8 @@ const OrderRows = () => {
             <table className="w-full text-xs border-collapse">
               <thead>
                 <tr className="bg-table-header">
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold w-8">
-                    <input type="checkbox" className="rounded-none" />
-                  </th>
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold w-16">Attach</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Order Number</th>
-                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Row</th>
+                  <th className="border border-table-border px-1 py-1 text-left font-semibold">Row Number</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Status</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Material code</th>
                   <th className="border border-table-border px-1 py-1 text-left font-semibold">Price</th>
@@ -152,25 +125,9 @@ const OrderRows = () => {
                 {orderRows.map((row) => (
                   <tr 
                     key={row.id}
-                    className={`hover:bg-muted ${selectedRows.has(row.id) ? 'bg-muted' : ''}`}
+                    className={`hover:bg-muted cursor-pointer ${selectedRows.has(row.id) ? 'bg-muted' : ''}`}
+                    onClick={() => toggleRow(row.id)}
                   >
-                    <td className="border border-table-border px-1 py-1">
-                      <input 
-                        type="checkbox" 
-                        checked={selectedRows.has(row.id)}
-                        onChange={() => toggleRow(row.id)}
-                        className="rounded-none"
-                      />
-                    </td>
-                    <td className="border border-table-border px-1 py-1">
-                      <button 
-                        onClick={() => openAttachmentModal(row.id)}
-                        className="flex items-center gap-1 hover:text-primary"
-                      >
-                        <Paperclip className="w-3 h-3" />
-                        <span className="text-xs">({getAttachmentCount(row.id)})</span>
-                      </button>
-                    </td>
                     <td className="border border-table-border px-1 py-1">{row.orderNumber}</td>
                     <td className="border border-table-border px-1 py-1">{row.rowNumber}</td>
                     <td className="border border-table-border px-1 py-1">{row.status}</td>
@@ -252,14 +209,6 @@ const OrderRows = () => {
           </div>
         </main>
       </div>
-
-      <AttachmentModal
-        open={attachmentModalOpen}
-        onOpenChange={setAttachmentModalOpen}
-        title="Line attachments"
-        attachments={currentRowId ? (attachmentsByRowId[currentRowId] || []) : []}
-        onAttachmentsChange={handleAttachmentsChange}
-      />
     </div>
   );
 };
