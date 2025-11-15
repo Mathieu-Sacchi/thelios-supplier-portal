@@ -12,7 +12,7 @@ export const PortalHeader = () => {
     <header className="bg-header text-header-foreground border-b-2 border-border">
       <div className="flex items-center justify-between px-4 py-2">
         <div className="flex items-center gap-6">
-          <h1 className="text-sm font-bold tracking-wider">SUPPLIER COLLABORATION PORTAL</h1>
+          <h1 className="text-sm font-bold tracking-wider">THELIOS SUPPLIER COLLABORATION PORTAL</h1>
         </div>
         
         <div className="flex items-center gap-4 text-xs">

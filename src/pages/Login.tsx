@@ -20,7 +20,7 @@ const Login = () => {
       {/* Header */}
       <header className="bg-header text-header-foreground border-b-2 border-border">
         <div className="px-4 py-3">
-          <h1 className="text-sm font-bold tracking-wider">SUPLLIER COLLABORATION PORTAL</h1>
+          <h1 className="text-sm font-bold tracking-wider">THELIOS SUPPLIER COLLABORATION PORTAL</h1>
         </div>
       </header>
 
@@ -30,7 +30,7 @@ const Login = () => {
           <div className="bg-card border-2 border-border">
             {/* Title bar */}
             <div className="bg-secondary border-b-2 border-border px-4 py-2">
-              <h2 className="text-sm font-semibold">Supplar access</h2>
+              <h2 className="text-sm font-semibold">Supplier Access</h2>
             </div>
 
             {/* Form content */}
@@ -74,7 +74,7 @@ const Login = () => {
                     type="button"
                     className="text-xs text-primary underline hover:no-underline"
                   >
-                    Forget your password?
+                    Forgot your password?
                   </button>
                 </div>
               </form>
@@ -83,7 +83,7 @@ const Login = () => {
 
           {/* Footer */}
           <div className="mt-4 text-center text-xs text-muted-foreground">
-            © 2013 SUPPLIER COLLABORATION PORTAL - All rights reserved
+            © 2013 Thelios - All rights reserved
           </div>
         </div>
       </main>

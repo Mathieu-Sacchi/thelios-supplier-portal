@@ -23,14 +23,14 @@ const Home = () => {
           </div>
 
           <div className="mb-4 p-3 bg-card border-2 border-border">
-            <div className="mb-2 text-xs font-semibold">Sonsword fillters</div>
+            <div className="mb-2 text-xs font-semibold">Search filters</div>
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div>
                 <label className="block mb-1 font-semibold">Company</label>
                 <input type="text" className="w-full px-2 py-1 border-2 border-border bg-input rounded-none text-xs" />
               </div>
               <div>
-                <label className="block mb-1 font-semibold">Order: number</label>
+                <label className="block mb-1 font-semibold">Order number</label>
                 <input type="text" className="w-full px-2 py-1 border-2 border-border bg-input rounded-none text-xs" />
               </div>
             </div>
@@ -38,27 +38,27 @@ const Home = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-widget border-2 border-widget-border p-4">
-              <div className="text-xs font-semibold mb-2">New orders to conciruur particalip confirimed</div>
+              <div className="text-xs font-semibold mb-2">New orders to confirm or partially confirmed</div>
               <div className="text-3xl font-bold text-center py-4">{newOrders}</div>
             </div>
             <div className="bg-widget border-2 border-widget-border p-4">
-              <div className="text-xs font-semibold mb-2">Order rows in Atnpication ordorated by Purchas depo</div>
+              <div className="text-xs font-semibold mb-2">Order rows in negotiation - requested by Purchase dept.</div>
               <div className="text-3xl font-bold text-center py-4">{working}</div>
             </div>
             <div className="bg-widget border-2 border-widget-border p-4">
-              <div className="text-xs font-semibold mb-2">Order rows in sappication socpcosed by my Appller</div>
+              <div className="text-xs font-semibold mb-2">Order rows in negotiation - proposed by Supplier</div>
               <div className="text-3xl font-bold text-center py-4">{inNegotiation}</div>
             </div>
             <div className="bg-widget border-2 border-widget-border p-4">
-              <div className="text-xs font-semibold mb-2">Orders with accerarelm devillloary-dephs</div>
+              <div className="text-xs font-semibold mb-2">Orders with deviations in delivery dates</div>
               <div className="text-3xl font-bold text-center py-4">{withDeviations}</div>
             </div>
           </div>
 
           <div className="mt-4 p-3 bg-card border-2 border-border">
-            <div className="text-xs font-bold mb-2">Reters with accoming divilleery dates</div>
+            <div className="text-xs font-bold mb-2">Orders with upcoming delivery dates</div>
             <div className="text-xs leading-relaxed">
-              Expolitior is Boate In Ases Hirwe das dfasse adtulies. Resom in they In Fiqilone and Fnactions the sdosito conromasson coums.
+              Please review orders with confirmed delivery dates within the next 14 days. Ensure all quantities and specifications are correct before the shipment date.
             </div>
           </div>
         </main>
